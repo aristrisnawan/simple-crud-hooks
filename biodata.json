@@ -1,0 +1,16 @@
+{
+  "biodata": [
+    {
+      "id": 1,
+      "name": "Aris",
+      "pekerjaan": "Programmer",
+      "usia": 20
+    },
+    {
+      "id": 2,
+      "name": "Aris Trisnawan",
+      "pekerjaan": "Programmer",
+      "usia": 20
+    }
+  ]
+}
