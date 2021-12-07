@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Table } from "reactstrap";
 
-export default function TableComponent({ data, handleEdit }) {
+export default function TableComponent({ data, handleEdit, handleDelete }) {
   return (
     <div className="mt-3">
       <Table bordered>
@@ -24,7 +24,7 @@ export default function TableComponent({ data, handleEdit }) {
                 <td>{bio.pekerjaan}</td>
                 <td>
                   <Button className="btn btn-sm btn-warning" onClick={() => handleEdit(bio.id)} style={{marginRight:"5px"}}>Edit</Button>
-                  <Button className="btn btn-sm btn-danger">Delete</Button>
+                  <Button className="btn btn-sm btn-danger" onClick={() => handleDelete(bio.id)}>Delete</Button>
                 </td>
               </tr>
             </tbody>

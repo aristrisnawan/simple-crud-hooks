@@ -24,12 +24,14 @@ function FormTambahData() {
     usia: 0
   });
 
+  //Handle for onChange
   function handleChange(e) {
       let data = {...formData}
       data[e.target.name] = e.target.value
       setFormData(data)
   }
 
+  //For Handel Submit
   function handleSubmit(e) {
     e.preventDefault();
     let data = [...biodata];
@@ -65,11 +67,21 @@ function FormTambahData() {
 
   }
 
+  //Handle for edit
   function handleEdit(id) {
     let data = [...biodata]
     let foundData = data.find((found) => found.id === id)
     setFormData({name:foundData.name, pekerjaan: foundData.pekerjaan, usia:foundData.usia})
     setUpdated({id:id, status:true})
+  }
+
+  //Handel for Delete
+  function handleDelete(id) {
+    let data = [...biodata]
+    let filterData = data.filter((bio) => bio.id !== id)
+
+    alert("Delete success")
+    setBiodata(filterData);
   }
 
   return (
@@ -105,7 +117,7 @@ function FormTambahData() {
           </Button>
         </Form>
       </div>
-      <TableComponent data={biodata} handleEdit={handleEdit}/>
+      <TableComponent data={biodata} handleEdit={handleEdit} handleDelete={handleDelete}/>
     </div>
   );
 }
